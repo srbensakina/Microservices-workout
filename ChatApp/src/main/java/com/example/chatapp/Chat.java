@@ -13,8 +13,8 @@ public class Chat {
     @Id
     private String id;
     private String message;
-    private String sender;
-    private String receiver;
+    private Integer sender;
+    private Integer receiver;
     private Integer chatId;
 
     private LocalDateTime createdAt;
