@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="DiscoveryService" />
         <module name="WorkoutApp" />
         <module name="ChatApp" />
       </profile>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ChatApp" options="-parameters" />
       <module name="DietBot" options="-parameters" />
+      <module name="DiscoveryService" options="-parameters" />
       <module name="WorkoutApp" options="-parameters" />
     </option>
   </component>

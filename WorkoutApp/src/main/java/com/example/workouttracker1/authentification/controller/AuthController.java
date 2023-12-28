@@ -73,7 +73,7 @@ public class AuthController {
 
 @GetMapping("/{receiverId}")
 @ResponseStatus(HttpStatus.OK)
-public boolean AreUsers(@PathVariable Integer receiverId  ){
+public boolean IsUser(@PathVariable Integer receiverId  ){
     return userRepository.existsById(receiverId);
 }
 
