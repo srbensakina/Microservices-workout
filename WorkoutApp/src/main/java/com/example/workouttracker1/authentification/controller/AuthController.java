@@ -8,6 +8,7 @@ import com.example.workouttracker1.authentification.entity.User;
 import com.example.workouttracker1.authentification.jwt.JwtUtil;
 import com.example.workouttracker1.authentification.repository.RoleRepository;
 import com.example.workouttracker1.authentification.repository.UserRepository;
+import com.example.workouttracker1.authentification.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
+
+
+   /* private final AuthenticationManager authenticationManager;
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
@@ -69,6 +72,8 @@ public class AuthController {
         return new ResponseEntity<>("User is registered successfully!", HttpStatus.OK);
     }
 
+*/
+
 
 
 @GetMapping("/{receiverId}")
@@ -77,7 +82,16 @@ public boolean IsUser(@PathVariable Integer receiverId  ){
     return userRepository.existsById(receiverId);
 }
 
+    @PostMapping
+    public User save(@RequestBody User user) {
+        return userRepository.save(user);
+    }
 
 
+
+    @GetMapping(value = "/secure")
+    public String getSecure() {
+        return "Secure endpoint available";
+    }
 
 }

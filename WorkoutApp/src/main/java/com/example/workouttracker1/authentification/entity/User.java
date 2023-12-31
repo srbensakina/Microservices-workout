@@ -1,10 +1,9 @@
 package com.example.workouttracker1.authentification.entity;
 
-import java.util.Set;
-
-import com.example.workouttracker1.authentification.entity.Role;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
 
 @Entity
 @Getter

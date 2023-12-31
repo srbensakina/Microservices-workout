@@ -19,6 +19,8 @@
         <module>ChatApp</module>
         <module>WorkoutApp</module>
         <module>DiscoveryService</module>
+        <module>ApiGateway</module>
+        <module>AuthService</module>
     </modules>
 
     <properties>

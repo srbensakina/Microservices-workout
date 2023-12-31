@@ -9,7 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="DiscoveryService" />
         <module name="WorkoutApp" />
+        <module name="ApiGateway" />
         <module name="ChatApp" />
+        <module name="AuthService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +20,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
+      <module name="AuthService" options="-parameters" />
       <module name="ChatApp" options="-parameters" />
       <module name="DietBot" options="-parameters" />
       <module name="DiscoveryService" options="-parameters" />
