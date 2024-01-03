@@ -84,6 +84,9 @@ public class AuthenticationFilter implements GatewayFilter {
 
             final String token = getAuthHeader(request);
 
+            System.out.println("i am token " + token);
+
+
             if (jwtUtil.isInvalid(token)) {
                 return onError(exchange, "Authorization header is invalid or expired", HttpStatus.UNAUTHORIZED);
             }
@@ -106,10 +109,16 @@ public class AuthenticationFilter implements GatewayFilter {
         return response.writeWith(Mono.just(buffer));
     }
 
-    private String getAuthHeader(ServerHttpRequest request) {
+  /*  private String getAuthHeader(ServerHttpRequest request) {
         List<String> authHeaders = request.getHeaders().getOrDefault(HttpHeaders.AUTHORIZATION, Collections.emptyList());
         return authHeaders.isEmpty() ? null : authHeaders.get(0);
+    }*/
+
+    private String getAuthHeader(ServerHttpRequest request) {
+        List<String> authHeaders = request.getHeaders().getOrDefault(HttpHeaders.AUTHORIZATION, Collections.emptyList());
+        return authHeaders.isEmpty() ? null : authHeaders.get(0).split(" ")[1].trim();  //authHeaders.get(0).trim();
     }
+
 
     private boolean isAuthMissing(ServerHttpRequest request) {
         return !request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION);

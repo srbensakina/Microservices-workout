@@ -1,25 +1,11 @@
 package com.example.workouttracker1.authentification.controller;
 
 
-import com.example.workouttracker1.authentification.dto.LoginDto;
-import com.example.workouttracker1.authentification.dto.SignUpDto;
-import com.example.workouttracker1.authentification.entity.Role;
 import com.example.workouttracker1.authentification.entity.User;
-import com.example.workouttracker1.authentification.jwt.JwtUtil;
-import com.example.workouttracker1.authentification.repository.RoleRepository;
 import com.example.workouttracker1.authentification.repository.UserRepository;
-import com.example.workouttracker1.authentification.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/users")

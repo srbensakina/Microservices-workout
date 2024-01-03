@@ -28,8 +28,8 @@ public class JwtUtil {
     }
 
     public Claims getAllClaimsFromToken(String token) {
-        return Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
-       // return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+      //  return Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
     }
 
     private boolean isTokenExpired(String token) {

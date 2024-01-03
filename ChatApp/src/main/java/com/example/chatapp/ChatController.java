@@ -24,7 +24,6 @@ public class ChatController {
     @GetMapping(value = "/chat/id/{chatId}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Chat> getMessages(@PathVariable Integer chatId) {
         return chatRepository.findByChatId(chatId).subscribeOn(Schedulers.boundedElastic()).doOnError(error -> {
-            // Handle errors, log, etc.
         }).onErrorResume(error -> Flux.empty());
     }
 

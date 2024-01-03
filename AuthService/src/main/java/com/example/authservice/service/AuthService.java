@@ -52,7 +52,7 @@ public class AuthService {
                 .bodyValue(authRequest)
                 .retrieve()
                 .bodyToMono(UserVO.class)
-                .block();  // blocking for simplicity; use subscribe() in a reactive application
+                .block();
 
         Assert.notNull(userVO, "Failed to register user. Please try again later");
 

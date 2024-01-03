@@ -24,6 +24,10 @@ public class GatewayConfig {
                 .route("auth-service", r -> r.path("/auth/**")
                         .filters(f -> f.filter(filter))
                         .uri("lb://auth-service"))
+
+                .route("chat-service", r -> r.path("/chat/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://chat-service"))
                 .build();
     }
 
