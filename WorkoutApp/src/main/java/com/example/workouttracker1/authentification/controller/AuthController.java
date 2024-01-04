@@ -4,6 +4,7 @@ package com.example.workouttracker1.authentification.controller;
 import com.example.workouttracker1.authentification.entity.User;
 import com.example.workouttracker1.authentification.repository.UserRepository;
 import com.example.workouttracker1.dto.LoginDto;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,9 @@ public boolean IsUser(@PathVariable Integer receiverId  ){
       //  System.out.println("i am user" + userRepository.findByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword()));
         return userRepository.findByEmail(loginDto.getEmail());
     }
+
+
+
 
     @GetMapping(value = "/secure")
     public String getSecure() {

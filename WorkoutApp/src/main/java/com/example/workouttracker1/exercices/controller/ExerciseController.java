@@ -4,6 +4,7 @@ package com.example.workouttracker1.exercices.controller;
 import com.example.workouttracker1.exercices.dto.ExerciseDTO;
 import com.example.workouttracker1.exercices.service.ExerciseService;
 import com.example.workouttracker1.exercices.entity.MuscleGroupEnum;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/exercises")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-@CrossOrigin
+//@CrossOrigin
 public class ExerciseController {
 
     private final ExerciseService exerciseService;
